@@ -5,15 +5,16 @@ using UnityEngine;
 public class Spawner : MonoBehaviour {
 
     public GameObject walls;
-    public int lvl = 1;
+    public int lvl = 5;
+    public float spawnDelay = 1;
 
     public float width = 8;
-    public float height = 1;
+    public float height = 2;
 
 
     // Use this for initialization
     void Start () {
-        Spawn();
+        StartCoroutine (timer());
     }
 
     // Update is called once per frame
@@ -21,12 +22,13 @@ public class Spawner : MonoBehaviour {
 
 	}
 
-    void Spawn()
+    IEnumerator timer()
     {
-
         for (int i = 0; i < lvl; i++)
         {
             Instantiate(walls, transform.position, Quaternion.identity);
         }
+        yield return new WaitForSeconds(spawnDelay);
     }
+
 }
