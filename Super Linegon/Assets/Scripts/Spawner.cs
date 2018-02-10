@@ -24,11 +24,14 @@ public class Spawner : MonoBehaviour {
 
     IEnumerator timer()
     {
-        for (int i = 0; i < lvl; i++)
+        while (true)
         {
-            Instantiate(walls, transform.position, Quaternion.identity);
-        }
+            for (int i = 0; i < lvl; i++)
+            {
+                Instantiate(walls, transform.position, Quaternion.identity);
+            }
         yield return new WaitForSeconds(spawnDelay);
+        }
     }
 
 }
