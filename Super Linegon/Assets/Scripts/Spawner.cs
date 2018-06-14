@@ -8,6 +8,9 @@ public class Spawner : MonoBehaviour {
     public int lvl = 5;
     public float spawnDelay = 1;
 
+    float initialX = 4;
+    float initialY = 6;
+
 
     // Use this for initialization
     void Start () {
@@ -21,14 +24,16 @@ public class Spawner : MonoBehaviour {
 
     IEnumerator timer()
     {
+        int WallNumber = 1;
         while (true)
         {
             for (int i = 0; i < lvl; i++)
             {
-                Instantiate(walls, transform.position, Quaternion.identity);
+                Instantiate(walls, new Vector3(initialX,initialY,0), Quaternion.identity);
             }
+            WallNumber++;
+            print(WallNumber);
         yield return new WaitForSeconds(spawnDelay);
-
         }
     }
 
