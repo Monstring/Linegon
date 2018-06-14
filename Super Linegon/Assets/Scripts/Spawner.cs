@@ -8,19 +8,16 @@ public class Spawner : MonoBehaviour {
     public int lvl = 5;
     public float spawnDelay = 1;
 
-    public float width = 8;
-    public float height = 2;
-
 
     // Use this for initialization
     void Start () {
-        StartCoroutine (timer());
+        StartCoroutine(timer());
     }
 
     // Update is called once per frame
     void Update () {
 
-	}
+    }
 
     IEnumerator timer()
     {
@@ -31,6 +28,7 @@ public class Spawner : MonoBehaviour {
                 Instantiate(walls, transform.position, Quaternion.identity);
             }
         yield return new WaitForSeconds(spawnDelay);
+
         }
     }
 
