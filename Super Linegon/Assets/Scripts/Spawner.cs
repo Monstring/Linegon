@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawner : MonoBehaviour {
+public class Spawner : SizeController {
 
     public GameObject walls;
-    public int lvl = 5;
+    public int lvl = 3;
     public float spawnDelay = 1;
 
     float initialX = 4;
@@ -24,15 +24,13 @@ public class Spawner : MonoBehaviour {
 
     IEnumerator timer()
     {
-        int WallNumber = 1;
         while (true)
         {
-            for (int i = 0; i < lvl; i++)
+            width /= 3;
+            for (int i = 0; i < 1; i++)
             {
                 Instantiate(walls, new Vector3(initialX,initialY,0), Quaternion.identity);
             }
-            WallNumber++;
-            print(WallNumber);
         yield return new WaitForSeconds(spawnDelay);
         }
     }
