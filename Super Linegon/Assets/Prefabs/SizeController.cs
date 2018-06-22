@@ -16,4 +16,9 @@ public class SizeController : MonoBehaviour {
     // Update is called once per frame
     void Update () {
     }
+
+    public void SetSize(int n)
+    {
+        transform.localScale = new Vector3(width/n, height, 0);
+    }
 }
