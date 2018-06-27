@@ -8,8 +8,6 @@ public class Spawner : MonoBehaviour {
 
     public void Spawn()
     {
-        Instantiate(fallingWalls, this.transform, false);
-
-        
+        Instantiate(fallingWalls, this.transform).transform.localPosition = Vector3.zero;
     }
 }
