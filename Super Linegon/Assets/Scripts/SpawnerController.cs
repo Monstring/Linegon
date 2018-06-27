@@ -8,6 +8,7 @@ public class SpawnerController : MonoBehaviour {
     public Spawner spawnerPrefab;
 
     private Spawner[] spawners;
+
     public void Start()
     {
         spawners = new Spawner[0];
@@ -30,9 +31,15 @@ public class SpawnerController : MonoBehaviour {
     public void test()
     {
         InitiateSpawn(new Vector2(8,6), 4);
-        for (int i = 0; i < spawners.Length; i++)
-        {
-            spawners[i].Spawn();
-        }
+
+
+        //randomly select a spawner and make it spawn. 
+        int randomPicker = Random.Range(0,spawners.Length);
+        spawners[randomPicker].Spawn();
+
+        //for (int i = 0; i < spawners.Length; i++)
+        //{
+        //    spawners[i].Spawn();
+        //}
     }
 }
