@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,4 +23,28 @@ public class CharacterMovement : MonoBehaviour {
             transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
         }
     }
+}
+
+
+public class Human
+{
+    public int Age;
+
+    private DateTime birthDate;
+    private DateTime deathDate;
+
+
+    public void Eat(string food)
+    {
+
+    }
+
+
+    public int CalculateAge()
+    {
+        return 0; 
+    }
+
+
+
 }
