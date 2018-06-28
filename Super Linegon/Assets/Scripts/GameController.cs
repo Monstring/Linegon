@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour {
     public int score;
     public float width;
     public float height;
     public int level;
+    public Text text;
 
     public SpawnerController SpawnerController;
 	// Use this for initialization
@@ -18,6 +20,7 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        text.text = score.ToString();
         score += 9;
         CalculateLevel();
 	}
