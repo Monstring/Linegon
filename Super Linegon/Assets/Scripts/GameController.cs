@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour {
     public float width;
     public float height;
     public int level;
+    public int scoreIncrement = 1;
     public Text text;
 
     public SpawnerController SpawnerController;
@@ -23,7 +24,7 @@ public class GameController : MonoBehaviour {
         text.text = score.ToString();
         if (Time.timeScale != 0)
         {
-            score += 1;
+            score += scoreIncrement;
         }
         CalculateLevel();
 	}

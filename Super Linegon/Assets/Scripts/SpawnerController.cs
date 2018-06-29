@@ -59,7 +59,10 @@ public class SpawnerController : MonoBehaviour {
 
     private void RandomSpawner()
     {
-        int randomPicker = Random.Range(0, spawners.Length);
-        spawners[randomPicker].Spawn();
+        int wallNumbers = Random.Range(1, spawners.Length);
+        for (int i = 0; i < wallNumbers; i++)
+        {
+            spawners[Random.Range(0, spawners.Length)].Spawn();
+        }
     }
 }

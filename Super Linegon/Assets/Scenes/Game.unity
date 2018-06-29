@@ -550,7 +550,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d004f93a2300b24c896f62a584554d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delay: 0.5
+  delay: 1
   spawnerPrefab: {fileID: 1777376096}
 --- !u!4 &276270893
 Transform:
@@ -1092,6 +1092,7 @@ MonoBehaviour:
   width: 8
   height: 6
   level: 0
+  scoreIncrement: 10
   text: {fileID: 1295194154}
   SpawnerController: {fileID: 276270892}
 --- !u!4 &2133075759
