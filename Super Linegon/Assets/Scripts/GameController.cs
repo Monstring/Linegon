@@ -21,7 +21,10 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         text.text = score.ToString();
-        score += 9;
+        if (Time.timeScale != 0)
+        {
+            score += 1;
+        }
         CalculateLevel();
 	}
 

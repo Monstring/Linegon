@@ -23,28 +23,9 @@ public class CharacterMovement : MonoBehaviour {
             transform.position += new Vector3(speed * Time.deltaTime, 0, 0);
         }
     }
-}
 
-
-public class Human
-{
-    public int Age;
-
-    private DateTime birthDate;
-    private DateTime deathDate;
-
-
-    public void Eat(string food)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-
+        Time.timeScale = 0;
     }
-
-
-    public int CalculateAge()
-    {
-        return 0; 
-    }
-
-
-
 }
