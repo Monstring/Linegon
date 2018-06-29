@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpawnerController : MonoBehaviour {
 
+    private FairRandomiser fairRandomiser;
     public float delay;
     public Spawner spawnerPrefab;
     private Spawner[] spawners;
@@ -11,6 +12,7 @@ public class SpawnerController : MonoBehaviour {
 
     public void Start()
     {
+        fairRandomiser = new FairRandomiser();
         spawners = new Spawner[0];
     }
     public void InitiateSpawn(Vector2 bounds, int level)
@@ -62,7 +64,7 @@ public class SpawnerController : MonoBehaviour {
         int wallNumbers = Random.Range(1, spawners.Length);
         for (int i = 0; i < wallNumbers; i++)
         {
-            spawners[Random.Range(0, spawners.Length)].Spawn();
+            spawners[fairRandomiser.NextInt(spawners.Length)].Spawn();
         }
     }
 }
