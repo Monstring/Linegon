@@ -7,10 +7,11 @@ public class CharacterMovement : MonoBehaviour {
 
     public float speed = 5;
     public bool alive = true;
+
 	// Use this for initialization
 	void Start () {
-
-	}
+        transform.GetChild(0).gameObject.SetActive(false);
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -26,6 +27,10 @@ public class CharacterMovement : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+        gameObject.GetComponent<CharacterMovement>().enabled = false;
+        transform.GetChild(0).gameObject.SetActive(true);
         alive = false;
     }
 }
