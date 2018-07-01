@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
     public int level;
     public int scoreIncrement = 1;
     public Text text;
+    public CharacterMovement characterMovement;
 
     public SpawnerController SpawnerController;
 	// Use this for initialization
@@ -22,7 +23,7 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         text.text = score.ToString();
-        if (Time.timeScale != 0)
+        if (characterMovement.alive == true)
         {
             score += scoreIncrement;
         }

@@ -6,7 +6,7 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour {
 
     public float speed = 5;
-
+    public bool alive = true;
 	// Use this for initialization
 	void Start () {
 
@@ -26,6 +26,6 @@ public class CharacterMovement : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Time.timeScale = 0;
+        alive = false;
     }
 }
