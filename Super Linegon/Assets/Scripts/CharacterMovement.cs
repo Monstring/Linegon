@@ -27,10 +27,24 @@ public class CharacterMovement : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        gameObject.GetComponent<SpriteRenderer>().enabled = false;
-        gameObject.GetComponent<PolygonCollider2D>().enabled = false;
-        gameObject.GetComponent<CharacterMovement>().enabled = false;
-        transform.GetChild(0).gameObject.SetActive(true);
         alive = false;
+        if (alive == false)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            gameObject.GetComponent<PolygonCollider2D>().enabled = false;
+            gameObject.GetComponent<CharacterMovement>().enabled = false;
+            transform.GetChild(0).gameObject.SetActive(true);
+        }
     }
+
+    public void test()
+    {
+        alive = true;
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+        gameObject.GetComponent<CharacterMovement>().enabled = true;
+        transform.GetChild(0).gameObject.SetActive(false);
+        print("button is pressed");
+    }
+
 }

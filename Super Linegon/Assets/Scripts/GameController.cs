@@ -9,7 +9,8 @@ public class GameController : MonoBehaviour {
     public float height;
     public int level;
     public int scoreIncrement = 1;
-    public Text text;
+    private int highScore;
+    public Text scoreText;
     public CharacterMovement characterMovement;
 
     public SpawnerController SpawnerController;
@@ -22,14 +23,21 @@ public class GameController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        text.text = score.ToString();
+        scoreText.text = "High score: " + highScore.ToString() + "\n" + score.ToString();
         if (characterMovement.alive == true)
         {
             score += scoreIncrement;
         }
         CalculateLevel();
+        if (score > highScore)
+        {
+            highScore = score;
+        }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Retry();
+        }
 	}
-
     public void CalculateLevel()
     {
         int pLevel = level;
@@ -38,5 +46,14 @@ public class GameController : MonoBehaviour {
         {
             SpawnerController.InitiateSpawn(new Vector2(width, height), level);
         }
+    }
+    public void Retry()
+    {
+        score = 0;
+        characterMovement.alive = true;
+        characterMovement.gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        characterMovement.gameObject.GetComponent<PolygonCollider2D>().enabled = true;
+        characterMovement.gameObject.GetComponent<CharacterMovement>().enabled = true;
+        characterMovement.transform.GetChild(0).gameObject.SetActive(false);
     }
 }

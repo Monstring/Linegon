@@ -372,7 +372,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 217257871}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -485.7, y: -212.8, z: 0}
+  m_LocalPosition: {x: 310, y: -255, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1078834863}
@@ -381,7 +381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -485.7, y: -212.8}
+  m_AnchoredPosition: {x: 310, y: -255}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &217257873
@@ -423,8 +423,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 276270892}
-        m_MethodName: test
+      - m_Target: {fileID: 2133075758}
+        m_MethodName: Retry
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4274,7 +4274,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: Retry
 --- !u!222 &1078834865
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4406,7 +4406,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1295194153}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9, y: 259, z: 0}
+  m_LocalPosition: {x: 9, y: 221.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 24124014}
@@ -4414,8 +4414,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 9, y: 259}
-  m_SizeDelta: {x: 782, y: 34}
+  m_AnchoredPosition: {x: 9, y: 221.5}
+  m_SizeDelta: {x: 782, y: 109}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &1657047944 stripped
 Transform:
@@ -4496,7 +4496,7 @@ MonoBehaviour:
   height: 6
   level: 0
   scoreIncrement: 10
-  text: {fileID: 1295194154}
+  scoreText: {fileID: 1295194154}
   characterMovement: {fileID: 825673280}
   SpawnerController: {fileID: 276270892}
 --- !u!4 &2133075759
