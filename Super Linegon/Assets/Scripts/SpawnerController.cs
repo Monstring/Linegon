@@ -9,6 +9,7 @@ public class SpawnerController : MonoBehaviour {
     public Spawner spawnerPrefab;
     private Spawner[] spawners;
     public Coroutine spawningCoroutine;
+    CharacterMovement characterMovement;
 
     public void Start()
     {
